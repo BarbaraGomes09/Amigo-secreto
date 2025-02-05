@@ -1,21 +1,21 @@
-// Supondo que você tenha um array para armazenar os nomes dos amigos
 let amigos = [];
 
-// Função para adicionar um amigo
 function adicionarAmigo() {
-    // Captura o valor do campo de entrada
-    const campoNome = document.getElementById('nomeAmigo'); // ou use document.querySelector
-    const nome = campoNome.value.trim(); // Remove espaços em branco
+    const campoNome = document.getElementById('amigo'); // Use o ID correto
+    const nome = campoNome.value.trim();
 
-    // Valida a entrada
     if (nome === '') {
         alert("Por favor, insira um nome.");
     } else {
-        // Atualiza o array de amigos
         amigos.push(nome);
         console.log(amigos); // Para verificar se o nome foi adicionado
 
-        // Limpa o campo de entrada
-        campoNome.value = '';
+        // Aqui você pode adicionar o nome à lista no HTML, se desejar
+        const listaAmigos = document.getElementById('listaAmigos');
+        const li = document.createElement('li');
+        li.textContent = nome;
+        listaAmigos.appendChild(li);
+
+        campoNome.value = ''; // Limpa o campo de entrada
     }
 }
